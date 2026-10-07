@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>10000 Coders Electronics</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #222;
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 17px;
+        }
+
+        nav a:hover {
+            color: orange;
+        }
+
+        /* HOME */
+        #home {
+            min-height: 500px;
+            padding: 40px 50px;
+        }
+
+        .main-container {
+            display: flex;
+            gap: 30px;
+        }
+
+        /* BACKGROUND IMAGE */
+        .background-image {
+            width: 70%;
+            height: 400px;
+            background-image: url("https://images.unsplash.com/photo-1468495244123-6c6c332eeece");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .background-image h2 {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        /* CONTACT FORM */
+        .contact-form {
+            width: 30%;
+            border: 2px solid #333;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .contact-form h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        .contact-form textarea {
+            height: 80px;
+        }
+
+        .contact-form button {
+            margin-top: 15px;
+            padding: 10px 25px;
+            background-color: #222;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: orange;
+            color: black;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 50px;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* ABOUT */
+        #about {
+            background-color: white;
+        }
+
+        #about p {
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* PRODUCTS */
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .product-card {
+            width: 220px;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+        }
+
+        .product-card h3 {
+            margin: 10px 0;
+        }
+
+        .product-card p {
+            margin: 8px;
+        }
+
+        .product-card button {
+            padding: 8px 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .product-card button:hover {
+            background-color: orange;
+            color: black;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+        }
+
+        footer a:hover {
+            color: orange;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 5px;
+                font-size: 14px;
+            }
+
+            .main-container {
+                flex-direction: column;
+            }
+
+            .background-image,
+            .contact-form {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>10000 Coders Electronics</h1>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#mobiles">Mobiles</a>
+            <a href="#laptops">Laptops</a>
+            <a href="#earbuds">Earbuds</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+
+
+    <!-- HOME -->
+    <section id="home">
+
+        <div class="main-container">
+
+            <!-- BACKGROUND IMAGE -->
+            <div class="background-image">
+                <h2>Electronics Store</h2>
+            </div>
+
+            <!-- CONTACT FORM -->
+            <div class="contact-form">
+
+                <h2>Contact Us</h2>
+
+                <form onsubmit="submitForm(event)">
+
+                    <label>Name:</label>
+                    <input type="text" id="name" required>
+
+                    <label>Mail:</label>
+                    <input type="email" id="email" required>
+
+                    <label>Phone:</label>
+                    <input type="tel" id="phone" required>
+
+                    <label>Info-id:</label>
+                    <input type="text" id="info">
+
+                    <label>Description:</label>
+                    <textarea id="description"></textarea>
+
+                    <button type="submit">Submit</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <h2>About Us</h2>
+
+        <p>
+            Welcome to 10000 Coders Electronics.
+            We provide mobiles, laptops, earbuds and
+            other electronic products at affordable prices.
+        </p>
+
+    </section>
+
+
+    <!-- MOBILES -->
+    <section id="mobiles">
+
+        <h2>Mobiles</h2>
+
+        <div class="products">
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97">
+                <h3>Smart Phone</h3>
+                <p>₹20,000</p>
+                <button onclick="buyProduct('Smart Phone')">
+                    Buy Now
+                </button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+                <h3>Android Phone</h3>
+                <p>₹25,000</p>
+                <button onclick="buyProduct('Android Phone')">
+                    Buy Now
+                </button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab">
+                <h3>Premium Phone</h3>
+                <p>₹35,000</p>
+                <button onclick="buyProduct('Premium Phone')">
+                    Buy Now
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LAPTOPS -->
+    <section id="laptops">
+
+        <h2>Laptops</h2>
+
+        <div class="products">
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853">
+                <h3>HP Laptop</h3>
+                <p>₹50,000</p>
+                <button onclick="buyProduct('HP Laptop')">
+                    Buy Now
+                </button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8">
+                <h3>MacBook</h3>
+                <p>₹80,000</p>
+                <button onclick="buyProduct('MacBook')">
+                    Buy Now
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EARBUDS -->
+    <section id="earbuds">
+
+        <h2>Earbuds</h2>
+
+        <div class="products">
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1">
+                <h3>Wireless Earbuds</h3>
+                <p>₹2,000</p>
+                <button onclick="buyProduct('Wireless Earbuds')">
+                    Buy Now
+                </button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/61Qqg+T8nsL._AC_.jpg">
+                <h3>Bluetooth Earbuds</h3>
+                <p>₹3,000</p>
+                <button onclick="buyProduct('Bluetooth Earbuds')">
+                    Buy Now
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <h2>Contact Us</h2>
+
+        <p style="text-align:center;">
+            Email: 10000coders@example.com
+            <br><br>
+            Phone: 9876543210
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h3>10000 Coders Electronics</h3>
+
+        <br>
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#mobiles">Mobiles</a>
+        <a href="#laptops">Laptops</a>
+        <a href="#earbuds">Earbuds</a>
+        <a href="#contact">Contact Us</a>
+
+        <br><br>
+
+        <p>© 2026 10000 Coders Electronics</p>
+
+    </footer>
+
+
+  
+    
